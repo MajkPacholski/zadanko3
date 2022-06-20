@@ -7,10 +7,6 @@ public class Main {
         System.out.println("Podaj znaki do sprawdzenia");
         String checkWord= scan.nextLine();
 
-        checkWord = checkWord.replaceAll(" ", "");
-        checkWord = checkWord.toLowerCase();
-
-
         if (isPalindrome(checkWord)) {
             System.out.println("is palindrome");
         }else{
@@ -19,11 +15,14 @@ public class Main {
 
     }
     public static boolean isPalindrome(String checkWord) {
+        checkWord = checkWord.replaceAll(" ", "");
+        String checkWordFinal = checkWord.toLowerCase();
+
         int i = 0;
-        int j = (checkWord.length() -1);
+        int j = (checkWordFinal.length() -1);
 
         while (i < j) {
-            if (checkWord.charAt(i) != checkWord.charAt(j)) {
+            if (checkWordFinal.charAt(i) != checkWordFinal.charAt(j)) {
                 return false;
 
             }
